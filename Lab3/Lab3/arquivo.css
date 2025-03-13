@@ -154,10 +154,19 @@ h2{
 
 .imagensf{
 background: bisque;
-font-size: 15px;
+font-size: 15pt;
 height: 10px;
 padding: 100px;
 width: 1675px;
 text-align: center;
-font-family: comic;
+font-family: "Comic Sans Ms" , cursive;
+}
+
+.img#c{
+    position:relative;
+
+}
+
+.img#d{
+    position:relative;
 }
