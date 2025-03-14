@@ -1,6 +1,165 @@
 .imagens{
+     align-items: center;
      display: flex;
      justify-content: center;
+     position: relative;
+     height: 150px;
+     margin-top: 70px;
+     padding: 30px;
+     margin:30px;
+     gap:20px
+ }
+ 
+ .primeiro{
+     background: #870487;
+     height:150px;
+     width:170px;
+     position: relative;
+     gap:20px;
+     right:-420px;
+     margin-top: -200px;
+ }
+ 
+     
+ 
+ h1{
+     color:white;
+     height:10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     
+ }
+ 
+ h2{
+     color:white;
+     height:20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     position: relative;
+     align-items: center;
+ 
+ }
+ 
+ h3{
+     color: white;
+     height:30px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     position: relative;
+     align-items: center;
+ }
+ 
+ 
+ .links a{
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  float: left;
+  right:-470px;
+  color: black;
+ }
+ 
+ a::after{
+     content: "||";
+     font-size: 20px;
+     position: relative;
+     top: 50%;
+     transform: translateY(-50%);
+     color: black;
+    margin:5px;
+ }
+ 
+ hr{
+     height:1px;
+     margin-top:50px;
+ }
+ 
+ .links02{
+     align-items: center;
+     justify-content: center;
+     position:relative;
+     float: left;
+     right: -500px;
+ }
+ 
+ .links02 a{
+     position: relative;
+     float: left;
+     right:-140px;
+     color: black;
+     top: -40px;
      text-align: center;
-     margin:10px;
-}
+    }
+ 
+    p{
+     justify-content: center;
+     text-align: center;
+ }
+ 
+ .imagens02{
+     align-items: center;
+     display: flex;
+     justify-content: center;
+     position: relative;
+     height: 150px;
+     margin-top: 70px;
+     padding: 30px;
+     margin:30px;
+     gap:20px
+ }
+ 
+ img#c{
+     justify-content: center;
+     position: relative;
+     right:-220px;
+ 
+ }
+ 
+ img#d{
+     top:200px;
+     position: relative;
+     left:-280px;
+     height: 270px;
+ }
+ 
+ img#e{
+     top:160px;
+     position: relative;
+     left:-280px;
+ }
+ 
+ img#f{
+     top:310px;
+     position: relative;
+     left:-500px;
+ }
+ 
+ .frase p{
+     position: relative;
+     top: 210px;
+     left:-260px
+ }
+ 
+ .final a {
+     position: relative;
+     float: left;
+     right:-300px;
+     color: black;
+     top: 240px;
+     text-align: center;
+     font-size: 15px;
+ }
+ 
+ .ultimo a{
+     position: relative;
+     float: left;
+     right:170px;
+     color: black;
+     top: 260px;
+     text-align: center;
+     font-size: 15px;
+ }
