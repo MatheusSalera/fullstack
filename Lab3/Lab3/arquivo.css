@@ -159,10 +159,8 @@ height: 20px;
 padding: 100px;
 width: 1675px;
 text-align: center;
-
 justify-content: center;
 font-family: "Comic Sans Ms" , cursive;
-
 }
 
 
@@ -181,3 +179,7 @@ img#c{
 
 }
 
+a{
+    position: relative;
+    top:-140px;
+}
