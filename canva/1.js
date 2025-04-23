@@ -178,7 +178,7 @@ ctx.lineWidth = 1.;
 ctx.strokeStyle = 'green';
 ctx.arc(150, 299, 65, 1.5 * Math.PI, 0 * Math.PI);
 ctx.stroke();
-ctx.closePath();
+ctx.closePath(); 
 
 
 let canvas2 = document.getElementById('canvas2');
