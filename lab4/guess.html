@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-   <title>Adivinhação</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link a href="arquivo3.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Jogo de Adivinhação</title>
+  <link rel="stylesheet" href="arquivo3.css">
 </head>
 
 <body>
-      <h1></h1>
-      <input type="text" id="valor" placeholder="Digite um número">
-      <input type= "button" value = "verificar" onclick="resultado()">
-      <p id="numero"></p>
 
-    <script src ="2.js"></script>
+  <div id="game-container">
+    <h1>Adivinhe o número!</h1>
+    <input type="number" id="ID_DO_ELEMENTO" placeholder="Digite um número entre 0 e 9">
+    <button onclick="checkGuess()">Tentar</button>
+    <p id="result"></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
+
+</html>
