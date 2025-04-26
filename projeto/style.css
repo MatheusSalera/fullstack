@@ -21,14 +21,16 @@ body {
   }
   
   .target {
-    width: 40px;
-    height: 40px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    cursor: pointer;
-    animation: moveTarget 1s ease-in-out infinite;
-  }
+        width: 60px;
+        height: 70px;
+        background-image: url('imagens/boneco.png'); /* Ajuste o caminho conforme sua pasta */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        cursor: pointer;
+      }
+      
   
   @keyframes moveTarget {
     0% { transform: scale(1); }
