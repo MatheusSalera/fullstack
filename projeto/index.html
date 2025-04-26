@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste de Mira Avançado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de Início -->
+  <div id="startScreen">
+    <h1>Teste de Mira Avançado</h1>
+    <p>Prepare-se para testar sua mira!</p>
+    <button id="startBtn">Começar Jogo</button>
+  </div>
+
+  <!-- Tela do Jogo -->
+  <div id="gameScreen" style="display: none;">
+    <p id="score">Pontos: 0</p>
+    <p id="timer">Tempo: 00:00</p>
+    <div id="gameArea"></div>
+  </div>
+
+  <!-- Tela de Fim de Jogo -->
+  <div id="gameOverScreen" style="display: none;">
+    <h1>Fim de Jogo!</h1>
+    <p>Você fez <span id="finalScore">0</span> pontos.</p>
+    <button id="restartBtn">Jogar Novamente</button>
+  </div>
+
+  <!-- Áudio -->
+  <audio id="clickSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  <audio id="gameOverSound" src="https://www.soundjay.com/button/beep-09.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
