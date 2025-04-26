@@ -2,35 +2,41 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Projeto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Mira</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Tela de Início -->
+
+  <!-- 🎯 Tela de Início -->
   <div id="startScreen">
-    <h1>Teste de Mira</h1>
-    <p>Prepare-se para testar sua mira!</p>
-    <button id="startBtn">Começar Jogo</button>
+    <h1>🎯 Teste de Mira</h1>
+    <p>Você está pronto para desafiar sua precisão?</p>
+    <button id="startBtn">🎮 Começar Jogo</button>
   </div>
 
-  <!-- Tela do Jogo -->
-  <div id="gameScreen" style="display: none;">
-    <p id="score">Pontos: 0</p>
-    <p id="timer">Tempo: 00:00</p>
+  <!-- 🚀 Tela do Jogo -->
+  <div id="gameScreen">
+    <div style="margin-top: 20px;">
+      <span id="score">Pontos: 0</span>
+      <span id="timer">Tempo: 00:00</span>
+    </div>
     <div id="gameArea"></div>
   </div>
 
-  <!-- Tela de Fim de Jogo -->
-  <div id="gameOverScreen" style="display: none;">
-    <h1>Fim de Jogo!</h1>
-    <p>Você fez <span id="finalScore">0</span> pontos.</p>
-    <button id="restartBtn">Jogar Novamente</button>
+  <!-- 💀 Tela de Fim de Jogo -->
+  <div id="gameOverScreen">
+    <h1>💀 Fim de Jogo!</h1>
+    <p>Você fez <strong><span id="finalScore">0</span></strong> pontos.</p>
+    <button id="restartBtn">🔁 Jogar Novamente</button>
   </div>
 
-  <!-- Áudio -->
+  <!-- 🔊 Sons -->
   <audio id="clickSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
   <audio id="gameOverSound" src="https://www.soundjay.com/button/beep-09.wav" preload="auto"></audio>
 
+  <!-- 📜 Script -->
   <script src="script.js"></script>
+
 </body>
 </html>

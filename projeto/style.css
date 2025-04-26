@@ -1,36 +1,84 @@
-body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Resetando algumas configurações do navegador */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
-  #gameScreen, #gameOverScreen {
+  /* Estilo do corpo */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Tela inicial */
+  #startScreen {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffe0;
+  }
+  
+  #startScreen h1 {
+    font-size: 36px;
+    color: #00ffe0;
+    margin-bottom: 20px;
+  }
+  
+  #startScreen button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #00ffe0;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  #startScreen button:hover {
+    background-color: #00d6c6;
+    transform: scale(1.05);
+  }
+  
+  /* Tela do Jogo */
+  #gameScreen {
     display: none;
+    text-align: center;
   }
   
   #gameArea {
     width: 800px;
     height: 500px;
-    background-color: white;
-    border: 2px solid black;
-    margin: 20px auto;
+    margin: 30px auto;
+    background-color: #222;
+    border-radius: 15px;
+    border: 3px solid #00ffe0;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 20px #00ffe0;
   }
   
   .target {
-        width: 60px;
-        height: 70px;
-        background-image: url('imagens/boneco.png'); /* Ajuste o caminho conforme sua pasta */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        cursor: pointer;
-      }
-      
+    width: 60px;
+    height: 70px;
+    background-image: url('imagens/boneco.png'); /* Ajuste o caminho conforme sua pasta */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    cursor: pointer;
+    animation: moveTarget 1s infinite ease-in-out;
+    transition: transform 0.3s ease-out;
+  }
   
   @keyframes moveTarget {
     0% { transform: scale(1); }
@@ -38,31 +86,48 @@ body {
     100% { transform: scale(1); }
   }
   
+  /* Timer e Pontuação */
   #timer, #score {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
+    color: #00ffe0;
+    margin-top: 20px;
   }
   
-  #startScreen {
-    text-align: center;
-    margin-top: 100px;
-  }
-  
-  #startScreen button {
-    padding: 10px 20px;
-    font-size: 18px;
-  }
-  
+  /* Tela de Fim de Jogo */
   #gameOverScreen {
-    margin-top: 100px;
+    display: none;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff6347;
+  }
+  
+  #gameOverScreen h1 {
+    font-size: 40px;
+    color: #ff6347;
+    margin-bottom: 20px;
+  }
+  
+  #gameOverScreen p {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 30px;
   }
   
   #gameOverScreen button {
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 15px 30px;
+    font-size: 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  #gameOverScreen button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
   }
   

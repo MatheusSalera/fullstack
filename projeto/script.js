@@ -1,3 +1,4 @@
+// 🎮 Seletores de elementos
 const startBtn = document.getElementById('startBtn');
 const restartBtn = document.getElementById('restartBtn');
 const gameArea = document.getElementById('gameArea');
@@ -9,46 +10,51 @@ const gameOverScreen = document.getElementById('gameOverScreen');
 const clickSound = document.getElementById('clickSound');
 const gameOverSound = document.getElementById('gameOverSound');
 
+// 🎯 Variáveis de controle do jogo
 let score = 0;
 let timeLeft = 60;
 let gameInterval;
 let spawnInterval;
 let gameTimer;
-let targetSpeed = 1000; // Inicialmente, cada 1 segundo
+let targetSpeed = 1000;
 let level = 1;
 
+// 🚀 Iniciar e reiniciar
 startBtn.addEventListener('click', startGame);
 restartBtn.addEventListener('click', restartGame);
 
+// ▶️ Início do jogo
 function startGame() {
-  // Iniciar a tela de jogo
+  // Alternar telas
   startScreen.style.display = 'none';
   gameScreen.style.display = 'block';
 
+  // Resetar variáveis
   score = 0;
   level = 1;
   timeLeft = 60;
   targetSpeed = 1000;
+
+  // Atualizar HUD
   scoreDisplay.textContent = `Pontos: 0`;
   timerDisplay.textContent = `Tempo: 00:00`;
 
-  // Iniciar o cronômetro
+  // Iniciar contadores
   gameTimer = setInterval(updateTimer, 1000);
-  
-  // Iniciar a geração de alvos
   spawnInterval = setInterval(spawnTarget, targetSpeed);
 
-  // Atualizar o nível a cada 10 pontos
+  // Sistema de níveis baseado em pontuação
   gameInterval = setInterval(() => {
     if (score >= level * 10) {
       level++;
-      targetSpeed -= 100; // Aumentar a velocidade dos alvos
+      targetSpeed = Math.max(300, targetSpeed - 100); // velocidade mínima
       clearInterval(spawnInterval);
       spawnInterval = setInterval(spawnTarget, targetSpeed);
     }
-  }, 10000); // Checa a cada 10 segundos
+  }, 10000);
 }
 
+// ⏰ Atualizar o cronômetro
 function updateTimer() {
   if (timeLeft <= 0) {
     endGame();
@@ -60,16 +66,19 @@ function updateTimer() {
   }
 }
 
+// 🎯 Criar alvo na área de jogo
 function spawnTarget() {
   const target = document.createElement('div');
   target.classList.add('target');
 
-  const x = Math.random() * (gameArea.clientWidth - 40);
-  const y = Math.random() * (gameArea.clientHeight - 40);
+  // Posição aleatória dentro da área
+  const x = Math.random() * (gameArea.clientWidth - 60);
+  const y = Math.random() * (gameArea.clientHeight - 70);
 
   target.style.left = `${x}px`;
   target.style.top = `${y}px`;
 
+  // Interação: clique no alvo
   target.addEventListener('click', () => {
     score++;
     scoreDisplay.textContent = `Pontos: ${score}`;
@@ -77,23 +86,26 @@ function spawnTarget() {
     target.remove();
   });
 
-  // Alvo desaparece após 1 segundo
+  // Remover após 1s caso não clique
   setTimeout(() => target.remove(), 1000);
 
   gameArea.appendChild(target);
 }
 
+// ❌ Fim do jogo
 function endGame() {
   clearInterval(gameTimer);
   clearInterval(spawnInterval);
   gameOverSound.play();
 
-  // Exibir tela de fim de jogo
-  gameOverScreen.style.display = 'block';
+  // Alternar telas
   gameScreen.style.display = 'none';
+  gameOverScreen.style.display = 'block';
+
   document.getElementById('finalScore').textContent = score;
 }
 
+// 🔁 Reiniciar
 function restartGame() {
   gameOverScreen.style.display = 'none';
   startScreen.style.display = 'block';
