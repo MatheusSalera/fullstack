@@ -1,79 +1,136 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background: linear-gradient(to top left, #ffd1dc, #ffe3e3);
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  flex-direction: column;
+}
+
+/* Container da Pergunta Inicial */
+.container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2em;
+  color: #ff3366;
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+.respostas button {
+  background-color: #ff3366;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.respostas button:hover {
+  background-color: #e72e5b;
+}
+
+#perguntaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Coração pulsante, posicionado acima */
+.heart {
+  width: 120px;
+  height: 120px;
+  background-color: #ff3366;
+  position: absolute;
+  top: 20px; /* Ajuste para ficar mais no topo */
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.7);
+  z-index: 1;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #ff3366;
+  border-radius: 50%;
+  top: -60px;
+}
+
+.heart::before {
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 60px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.7);
   }
-  
-  .container {
-    margin-top: 50px;
-    padding: 20px;
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+    box-shadow: 0 0 30px rgba(255, 51, 102, 1);
   }
-  
-  h1 {
-    color: #b80042;
-  }
-  
-  .message {
-    font-size: 18px;
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  button {
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background-color: #ff85c1;
-  }
-  
-  .heart {
-    width: 100px;
-    height: 90px;
-    background: red;
-    position: relative;
-    margin: 0 auto 20px;
-    transform: rotate(-45deg);
-    animation: pulse 1s infinite;
-  }
-  
-  .heart::before,
-  .heart::after {
-    content: "";
-    width: 100px;
-    height: 90px;
-    background: red;
-    border-radius: 50%;
-    position: absolute;
-  }
-  
-  .heart::before {
-    top: -50px;
-    left: 0;
-  }
-  
-  .heart::after {
-    left: 50px;
-    top: 0;
-  }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1) rotate(-45deg);
-    }
-    50% {
-      transform: scale(1.1) rotate(-45deg);
-    }
-    100% {
-      transform: scale(1) rotate(-45deg);
-    }
-  }
+}
+
+/* Mudança do botão e das mensagens */
+.message {
+  font-size: 1.1em;
+  color: #555;
+  min-height: 60px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+button {
+  background-color: #ff3366;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e72e5b;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}

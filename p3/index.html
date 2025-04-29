@@ -2,16 +2,24 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para Meu Amor ❤️</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="perguntaContainer">
+    <h1>Você ama o Matheus? </h1>
+    <div class="respostas">
+      <button id="simBtn">Sim</button>
+      <button id="naoBtn">Não</button>
+    </div>
+  </div>
+
+  <div class="container" id="coracaoContainer" style="display: none;">
     <div class="heart"></div>
     <h1>Para o amor da minha vida 💕</h1>
     <p class="message" id="message">Clique no botão abaixo :)</p>
-    <button onclick="mostrarMensagem()">Clique aqui, meu amor 💖</button>
+    <button onclick="mostrarMensagem()">Clique aqui, amor 💖</button>
   </div>
 
   <script src="script.js"></script>
