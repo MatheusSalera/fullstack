@@ -12,31 +12,27 @@ app.set('view engine', 'ejs');
 const users = [];
 
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Projects.html'));
-});
-
 app.get('/cadastra', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Cadastro.html'));
+  res.sendFile(path.join(__dirname, 'cadastro.html'));
 });
 
 app.post('/cadastra', (req, res) => {
   const { username, password } = req.body;
   users.push({ username, password });
-  res.redirect('/login');
+  res.redirect('/login.html');
 });
 
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Login.html'));
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
-app.post('/login', (req, res) => {
+app.post('/login.html', (req, res) => {
   const { username, password } = req.body;
   const user = users.find(u => u.username === username && u.password === password);
   if (user) {
-    res.render('resposta', { status: 'Login bem-sucedido!', user: username });
+    res.render('resposta.ejs', { status: 'Login bem-sucedido!', user: username });
   } else {
-    res.render('resposta', { status: 'Falha no login. Usuário ou senha incorretos.', user: null });
+    res.render('resposta.ejs', { status: 'Falha no login. Usuário ou senha incorretos.', user: null });
   }
 });
 
